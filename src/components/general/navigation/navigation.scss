@@ -1,0 +1,88 @@
+#navigation{
+	display: flex;
+	gap: .8em;
+	text-align: center;
+	
+	position: fixed;
+	right: 0;
+	top: 0;
+	font-size: 1rem;
+	line-height: 100%;
+	padding: 1.5em;
+	text-shadow: 1px 1px 4px rgb(236, 109, 255);
+	.decor_edge{
+		transition: opacity 250ms ease;
+		position: fixed;
+		right: 0%;
+		top: 0%;
+		z-index: -1;
+		scale: .5;
+		transform-origin: top right;
+		user-select: none;
+	}
+	&:hover{
+		.decor_edge{
+			opacity: .5;
+		}
+	}
+
+	.navigation-link{
+		$color:white;
+		color: $color;
+		text-decoration: none;
+		transition: line-height 250ms ease, top 250ms ease;
+
+		.indicator{
+			opacity: 0;
+			border: 1px solid $color;
+			transition: all 250ms ease;
+		}
+		.navigation-icon{
+			height: 10px;
+			path{
+				fill: white;
+			}
+		}
+		&:hover{
+			$color: #FFC90C;
+			color: $color;
+			line-height: 120%;
+			position: relative;
+			top: 5px;
+			.navigation-icon{
+				path{
+					fill: $color;
+					opacity: 1;
+				}
+			}
+			.indicator{
+				margin-top: 1em;
+				border: 1px solid $color;
+
+				opacity: 1;
+			}
+		}
+
+		&.active{
+			$color:#FFC90C;
+			color: $color;
+			transition: all 250ms ease;
+			position: relative;
+			top: 5px;
+			.navigation-icon{
+				path{
+					fill: $color;
+					opacity: 1;
+				}
+				scale: 1.05;
+			}
+			
+			.indicator{
+				margin-top: 1em;
+				border: 1px solid $color;
+
+				opacity: 1;
+			}
+		}
+	}
+}

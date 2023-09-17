@@ -3,6 +3,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: var(--font-main);
+	text-shadow: 1px 1px 6px rgba(252, 252, 252, 0.725);
+
 }
 
 body{
@@ -11,4 +13,8 @@ body{
 	color: white;
 	background-blend-mode: multiply;
 	background-size: cover;
+}
+
+.glow-purple{
+	text-shadow: 1px 1px 4px rgb(236, 109, 255);
 }
