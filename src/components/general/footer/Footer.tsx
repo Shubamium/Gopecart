@@ -2,7 +2,7 @@ import './footer.scss'
 
 export default function Footer() {
 	return (
-		<footer id="footer">
+		<footer id="footer" >
 			<div className="left">
 				<h2>GOPECART</h2>
 				<svg className='decor_arrow' xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 447 12" fill="none">

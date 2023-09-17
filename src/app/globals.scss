@@ -15,6 +15,9 @@ body{
 	background-size: cover;
 }
 
-.glow-purple{
+.tx-glow-purple{
 	text-shadow: 1px 1px 4px rgb(236, 109, 255);
+}
+.glow-purple{
+	filter: drop-shadow(1px 1px 4px rgb(236, 109, 255));
 }
