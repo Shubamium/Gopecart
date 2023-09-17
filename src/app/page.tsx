@@ -1,8 +1,8 @@
 
 export default function Home() {
   return (
-    <main className='home'>
+    <div className='home'>
 		<h2>Welcome to Gopecart</h2>
-    </main>
+    </div>
   )
 }

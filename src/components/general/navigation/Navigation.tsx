@@ -4,10 +4,10 @@ export default function Navigation({}) {
 	return (
 		<nav className="navigation">
 			<Link href={'/'} className="navigation-link">
-					Home
+					HOME
 			</Link>
-			<Link href={'/exhibition/'} className="navigation-link">exhibition</Link>
-			<Link href={'/commission/'} className="navigation-link">Commission</Link>
+			<Link href={'/exhibition/emotes'} className="navigation-link">EXHIBITION</Link>
+			<Link href={'/commission/'} className="navigation-link">COMMMISSION</Link>
 		</nav>
 	)
 }

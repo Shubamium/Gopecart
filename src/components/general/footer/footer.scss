@@ -1,0 +1,29 @@
+#footer{
+	background:black;
+	position: fixed;
+	width: 100%;
+	bottom: 0%;
+	padding: .4em;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.left{
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		h2{
+			font-size: .9rem;
+			font-family: var(--font-secondary);
+		}
+	}
+	.credits{
+		color: white;
+		text-decoration: none;
+		font-size: .8rem;
+		white-space: nowrap;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
