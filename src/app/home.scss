@@ -1,0 +1,161 @@
+#container_home{
+	.scroll-container{
+		height: 200vh;
+		width: 100%;
+		background-color: rgba(99, 31, 31, 0.084);
+	}
+	.content-bg{
+		width: 100%;
+		height: 100%;
+		background-size: 50%;
+		position: fixed;
+		scale: 1.4 1.35;
+		top: -14%;
+		left: -5%;
+		rotate: 5deg;
+		animation: content-bg 25s infinite linear;
+		z-index: -499;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.blackhole{
+		.decor_blackhole{
+			position: fixed;
+			height: 100%;
+			animation: blackhole 12s infinite linear;
+			z-index: -500;
+			pointer-events: none;
+			user-select: none;
+		}
+		.decor_stars{
+			pointer-events: none;
+			user-select: none;
+			
+			width: 100%;
+			height: 100%;
+			background: url('../../public/static/art/blackhole_stars.png');
+			position: fixed;
+			z-index: -510;
+			background-size: 30%;
+			object-position: 100% 100%;
+			animation: stars 1000s infinite linear reverse,stars-rotation 80s infinite linear,flicker 5s infinite ease; 
+			scale: 2.5;
+		}
+	}
+
+	.home-content{
+		position: fixed;
+
+		.content{
+			opacity: 0;
+			transition: all 250ms ease;
+			visibility: collapse;
+			&.active{
+				opacity: 1;
+				visibility: visible;
+			}
+			
+			#section_title-image{
+				position: fixed;
+				right: 0vw;
+				bottom: 1.5vw;
+				img{
+					width: 40vw;
+				}
+			}
+
+			#section_contacts{
+				position: fixed;
+				right: 10%;
+				// background: rgb(255, 255, 255);
+				bottom: 27%;
+				rotate: -20deg;
+				.contacts-header{
+					display: flex;
+					align-items: center;
+					gap: 2em;
+					h2{
+						text-decoration: underline;
+						color:#333131;
+						font-size: 1.5vw;
+						text-shadow: none;
+						rotate: -6deg;
+						position: relative;
+						top: -.5vw;
+					}
+					.decor_list{
+						width:15vw;
+						height: 4vw;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes stars{
+	to{
+		background-position: 10% 0vh;
+	}
+	from{
+		background-position: -10% -5000vh;
+	}
+
+}
+
+@keyframes stars-rotation {
+	from{
+		rotate: 0deg;
+	}
+	to{
+		rotate:360deg;
+	}
+}
+@keyframes flicker {
+	from{
+		opacity: .2;
+		filter: blur(.05vw);
+	}
+	70%{
+		opacity: 1;
+		filter: blur(0px );
+	}
+	to{
+		filter: blur(.05vw);
+		opacity: 0.2;
+	}
+	
+}
+@keyframes blackhole {
+	from{
+		filter: drop-shadow(.05vw .05vw .5vw rgb(236, 109, 255));
+		scale: 105%;
+		rotate: 0deg;
+	}
+	50%{
+		filter: drop-shadow(.2vw .2vw 1vw rgba(236, 109, 255, 0.25));
+		scale: 100%;
+		rotate: -3deg;
+	}
+	to{
+		filter: drop-shadow(.05vw .05vw .5vw rgb(236, 109, 255));
+		scale: 105%;
+		rotate: 0deg;
+	}
+}
+
+@keyframes content-bg {
+	0%{
+		rotate: -8deg;
+	}
+	25%{
+		rotate: -4deg;
+	}
+	75%{
+		rotate: -4deg;
+	}
+	100%{
+		rotate: -8deg;
+	}
+}

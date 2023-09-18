@@ -9,15 +9,35 @@
 
 body{
 	$gradient:linear-gradient(107deg, #4D2669 0.73%, #2F152F 36.11%, #290D1B 58.22%, #371223 74%, #641B3C 96.7%), linear-gradient(90deg, #4D2669 -8.38%, #2F152F 30.13%, #290D1B 51.18%, #371223 77.65%, #641B3C 107.13%);
-	background: url('/static/background/background-pattern.webp'),rgba(10, 10, 10, 0.487);
+	background: url('/static/background/background-pattern.webp'),rgba(82, 7, 7, 0.487);
 	color: white;
 	background-blend-mode: multiply;
 	background-size: cover;
+
+} 
+main{
+	overflow-x: hidden;
+
 }
+
+
 
 .tx-glow-purple{
 	text-shadow: 1px 1px 4px rgb(236, 109, 255);
 }
 .glow-purple{
 	filter: drop-shadow(1px 1px 4px rgb(236, 109, 255));
+}
+
+.glow-purple-animated{
+	animation: glow-purple-animated 10s infinite linear;
+}
+
+@keyframes glow-purple-animated {
+	from{
+		filter: drop-shadow(.25em .25em 1em rgb(236, 109, 255));
+	}
+	to{
+		filter: drop-shadow(.5em .5em 2em rgb(236, 109, 255));
+	}
 }

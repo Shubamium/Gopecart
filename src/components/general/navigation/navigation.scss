@@ -9,13 +9,13 @@
 	font-size: 1.1rem;
 	line-height: 110%;
 	padding: 1.5em;
-	
+	z-index: 2;
+
 	.decor_edge{
 		transition: all 250ms ease;
-		position: fixed;
+		position: absolute;
 		right: 0%;
 		top: 0%;
-		z-index: -1;
 		scale: .5;
 		transform-origin: top right;
 		user-select: none;
