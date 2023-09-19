@@ -2,6 +2,8 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import './home.scss'
 
+import {FaDiscord,FaTiktok,FaTwitter,FaYoutube} from 'react-icons/fa'
+
 
 export default function Home() {
 	const [activeContent,setActiveContent] = useState(0);
@@ -22,7 +24,18 @@ export default function Home() {
 					<h2>Contacts</h2>
 				</div>
 				<div className="contacts">
-					
+					<a href="https://www.youtube.com/c/GopecArt" className="contact">
+						<FaYoutube/>
+					</a>
+					<a href="https://twitter.com/gopec_" className="contact">
+						<FaTwitter/>
+					</a>
+					<a href="https://www.tiktok.com/@gopecart" className="contact">
+						<FaTiktok/>
+					</a>
+					<a href="https://discord.gg/NwVTMHt" className="contact">
+						<FaDiscord/>
+					</a>
 				</div>
 			</article>
 		),
@@ -47,7 +60,11 @@ export default function Home() {
 				<section id="decoration">
 					<div className="blackhole">
 						<img src="/static/art/blackhole.png" alt="" className='decor_blackhole' />
+						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring' />
+						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring_hr' />
+						{/* <img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring_hr second' /> */}
 						<div className='decor_stars glow-purple' />
+
 					</div>
 					<h2>Welcome to Gopecart</h2>
 					<img src="/static/art/decor/decor_content-ring.png" alt="" className="content-bg" />

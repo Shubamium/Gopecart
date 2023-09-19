@@ -19,6 +19,13 @@
 		user-select: none;
 	}
 
+	@keyframes speen {
+		from{
+			rotate: 0deg;
+		}to{
+			rotate: 360deg;
+		}
+	}
 	.blackhole{
 		.decor_blackhole{
 			position: fixed;
@@ -28,6 +35,29 @@
 			pointer-events: none;
 			user-select: none;
 		}
+		.decor_ring,.decor_ring_hr{
+			animation: speen 30s infinite linear;
+			position: fixed;
+			left: -30%;
+			transform-origin: 55% 50%;
+			scale: .7;
+			opacity: .8;
+			z-index: -1000;
+		}
+		.decor_ring_hr{
+			animation: flip 5s infinite ease-in-out;
+			filter: hue-rotate(90deg);
+			opacity: .2;
+			rotate: -20deg;
+			&.second{
+				rotate:20deg;
+				animation-duration: 8s;
+				filter: hue-rotate(290deg);
+				rotate: -50deg;
+				opacity: .05;
+			}
+		}
+		
 		.decor_stars{
 			pointer-events: none;
 			user-select: none;
@@ -67,14 +97,15 @@
 
 			#section_contacts{
 				position: fixed;
-				right: 10%;
-				// background: rgb(255, 255, 255);
-				bottom: 27%;
+				right: 8%;
+				bottom: 7vw;
 				rotate: -20deg;
 				.contacts-header{
 					display: flex;
 					align-items: center;
-					gap: 2em;
+					gap: 1vw;
+					justify-content: end;
+					margin-bottom: 1vw;
 					h2{
 						text-decoration: underline;
 						color:#333131;
@@ -83,10 +114,63 @@
 						rotate: -6deg;
 						position: relative;
 						top: -.5vw;
+						font-family: var(--font-secondary);
 					}
 					.decor_list{
-						width:15vw;
+						width:20vw;
 						height: 4vw;
+					}
+				}
+				.contacts{
+					display: flex;
+					gap: 2vw;
+					justify-content: space-evenly;
+					width: 100%;
+					.contact{
+						$color:#5A4110;
+						border:.15vw solid $color;
+						padding: 1vw;
+						display: flex;
+						align-items: center;
+						rotate:60deg;
+						transition: all 250ms ease;
+						svg{
+							transition: all 250ms ease;
+							rotate: -40deg;
+							fill:$color;
+							width: 3vw;
+							height: 3vw;
+						}
+						position: relative;
+						&::before{
+							content: '';
+							scale: 0;
+							width: 100%;
+							height: 100%;
+							border: .15vw solid $color;
+							position: absolute;
+							top: -2%;
+							left: -2%;
+							opacity: 0;
+							rotate: 90deg;
+							transition: all 250ms ease;
+						}
+						&:hover{
+							scale: 1.2;
+							background-color: #E1547F;
+							border-color: #E1547F;
+							svg{
+								fill: white;
+							}
+
+							&::before{
+								opacity: .9;
+								rotate: 0deg;
+								scale: 1.1;
+								border-width: .15vw;
+							}
+
+						}
 					}
 				}
 			}
@@ -157,5 +241,13 @@
 	}
 	100%{
 		rotate: -8deg;
+	}
+}
+
+@keyframes flip {
+	from{
+		scale: 0.8 1;
+	}to{
+		scale: 0.8 -1;
 	}
 }
