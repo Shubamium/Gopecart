@@ -1,0 +1,28 @@
+#container_exhibition-nav{
+	background-color: rgba(12, 4, 13, 0.968);
+	padding: .5vw;
+	position: fixed;
+	bottom: 4vh;
+	left: 2vw;
+	display: flex;
+	align-items: center;
+	gap: 1vw;
+	border-radius: .4em;
+	.exhibition-link{
+		text-decoration: none;
+		color: white;
+		opacity: .5;
+		font-size: 1rem;
+		transition: all 250ms ease;
+		&:hover,&.active{
+			opacity: 1;
+		}
+		&.active{
+			scale: 1.05;
+			color: #FFE03D;
+			background-color: #752432;
+			padding:.2em;
+			border-radius: .2em;
+		}
+	}
+}

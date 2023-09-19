@@ -1,6 +1,15 @@
+import ExhibitionNavigation from "@/components/exhibitionNavigation/ExhibitionNavigation";
 
-export default function ExhibitionLayout() {
+type ExhibitionLayoutProps = {
+	children:React.ReactNode;
+}
+export default function ExhibitionLayout({children} : ExhibitionLayoutProps) {
   return (
-	<div>ExhibitionLayout</div>
+	  <>
+	  	<ExhibitionNavigation/>
+		<div id="container_exhibition">
+			{children}
+		</div>
+	  </>
   )
 }
