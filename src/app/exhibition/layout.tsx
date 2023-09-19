@@ -7,7 +7,7 @@ export default function ExhibitionLayout({children} : ExhibitionLayoutProps) {
   return (
 	  <>
 	  	<ExhibitionNavigation/>
-		<div id="container_exhibition">
+		<div id="container_exhibition" style={{height:'100%',overflow:'visible'}}>
 			{children}
 		</div>
 	  </>
