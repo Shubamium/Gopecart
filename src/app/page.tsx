@@ -24,16 +24,16 @@ export default function Home() {
 					<h2>Contacts</h2>
 				</div>
 				<div className="contacts">
-					<a href="https://www.youtube.com/c/GopecArt" className="contact">
+					<a href="https://www.youtube.com/c/GopecArt" target='_blank' className="contact">
 						<FaYoutube/>
 					</a>
-					<a href="https://twitter.com/gopec_" className="contact">
+					<a href="https://twitter.com/gopec_" target='_blank' className="contact">
 						<FaTwitter/>
 					</a>
-					<a href="https://www.tiktok.com/@gopecart" className="contact">
+					<a href="https://www.tiktok.com/@gopecart" target='_blank' className="contact">
 						<FaTiktok/>
 					</a>
-					<a href="https://discord.gg/NwVTMHt" className="contact">
+					<a href="https://discord.gg/NwVTMHt" target='_blank' className="contact">
 						<FaDiscord/>
 					</a>
 				</div>
@@ -66,7 +66,6 @@ export default function Home() {
 						<div className='decor_stars glow-purple' />
 
 					</div>
-					<h2>Welcome to Gopecart</h2>
 					<img src="/static/art/decor/decor_content-ring.png" alt="" className="content-bg" />
 				</section>
 				<section className='home-content'>
