@@ -1,5 +1,28 @@
 #container_roulette{
 	
+
+	.roulette{
+		.decor_roulette{
+			position: fixed;
+			left: -28vw;
+			top: -5%;
+			height: 100%;
+			z-index: -50;
+			scale: .8;
+			rotate: 200deg;
+			transition: all 200ms linear;
+			transform-origin: 50.75% 50%;
+		}
+		.decor_arrow{
+			position: fixed;
+			left: -4%;
+			top: 28%;
+			transform-origin: left;
+			height:35%;
+			animation: arrow 2s infinite ease-in-out;
+			rotate: -30deg;
+		}
+	}
 	.container_spinner-image{
 		width: 70vw;
 		margin-left: 35vw;
@@ -14,6 +37,7 @@
 				top: 0%;
 				left: 55%;
 				height: 100%;
+				max-width: 60%;
 				transform: translate(-50%);
 			}
 		}
@@ -33,5 +57,17 @@
 				background-color: black;
 			}
 		}
+	}
+}
+
+@keyframes arrow {
+	from{
+		rotate: -20deg;
+	}
+	50%{
+		rotate: 20deg;
+	}
+	to{
+		rotate: -20deg;
 	}
 }

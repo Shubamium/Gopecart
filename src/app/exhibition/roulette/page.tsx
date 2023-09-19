@@ -2,15 +2,21 @@
 import './roulette.scss'
 import {useEffect,useRef} from 'react'
 export default function RoulettePage() {
-	// useEffect(()=>{
-	// 	window.addEventListener('scroll',()=>{
-	// 		console.log(window.scrollY)
-	// 	})
-	// },[]);
+	const rouletteRef = useRef<HTMLImageElement>(null);
+	useEffect(()=>{
+		window.addEventListener('scroll',()=>{
+			console.log(window.scrollY)
+			if(rouletteRef.current){
+				const rouletteEl = rouletteRef.current;
+				rouletteEl.style.rotate = `${window.scrollY/8}deg`
+			}
+		})
+	},[]);
 	return (
 		<div id="container_roulette">
 			<div className="roulette">
-
+					<img src="/static/art/roulette_wheel.png" alt="" className='decor_roulette' ref={rouletteRef} />
+					<img src="/static/art/roulette_arrow.png" alt="" className='decor_arrow' />
 			</div>
 			<div className="container_spinner-image">
 				<div className="decor_spinner">
