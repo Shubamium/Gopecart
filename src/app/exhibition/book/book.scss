@@ -1,0 +1,224 @@
+main{
+	overflow: hidden;
+	min-height: 100vh;
+}
+#container_book{
+	margin-top: 10vh;
+	height: 100%;
+	.book{
+		// background-color: #2d2f42;
+		background-color: #1a1a12;
+		border: .2vw solid #EEB74D ;
+		width: 70vw;
+		height: 75vh;
+		margin: 0 auto;
+		border-radius: .2vw;
+		// display: grid;
+		// grid-template-columns: 1fr 1fr;
+		perspective: 2500px;
+		position: relative;
+
+		
+		.page{
+			width: 50%;
+			position: absolute;
+			height: 100%;
+			transition: all 1100ms ease,opacity 1.5s ;
+			transform-origin: left;
+			position: absolute;
+			top: 0%;
+			left: 50%;
+			transform-style: preserve-3d;
+			perspective: 200rem;
+			&:last-child.flipped{
+				// z-index: 100;
+			}
+			// &::after{
+			// 	content: '';
+			// 	position: absolute;
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	top: 0%;
+			// 	left: 0%;
+			// 	background-color: blue;
+			// 	transform: rotateY(90deg);
+			// 	perspective: 200rem;
+			// 	backface-visibility: hidden;
+			// 	opacity: 0;
+			// }
+			&.flipped{
+				transform: rotateY(-.5turn);
+			}
+			// &.left{
+			// 	transform-origin: right;
+			// 	transform: rotate(0deg);
+
+			// 	&:active{
+			// 		z-index: 200;
+			// 		transform: rotateY(.5turn);
+			// 	}
+
+			// }
+
+			.page-side{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0%;
+				left: 0%;
+				transform-style: preserve-3d;
+				$shadowColor:rgba(25, 16, 29, 0.637);
+				background:url('./../../../../public/static/texture/paper_vague.png');
+				background-size: cover;
+				display: flex;
+				flex-direction: column;
+				&.front{
+
+					background-color: #4B4E6B;
+					box-shadow: 2vw 0vw 4vw  inset $shadowColor;
+					transform: rotate(0deg);
+					z-index: 1;
+					backface-visibility: hidden;
+					transform-style: preserve-3d;
+					perspective: 900rem;
+					&.flipped{
+						backface-visibility: hidden;
+						opacity: 0;
+					}
+					// & > *{
+					// 	perspective: 200rem;
+					// 	transform: translateZ(120px) translateY(-0px) translateX(-20px);
+						
+					// 	z-index: 200;
+					// 	backface-visibility: hidden;
+
+					// }
+
+					&.flipped{
+						& > * {
+							opacity: 0;
+						}
+					}
+		
+				}
+				&.back{
+					background-color: #4B4E6B;
+					box-shadow: -2vw 0vw 4vw  inset $shadowColor;
+					transform: rotateY(180deg);
+					z-index: -1;
+						
+					// & > *{
+					// 	perspective: 900rem;
+					// 	transform-style: preserve-3d;
+					// 	transform: translateZ(40px) translateY(30px) translateX(0px);
+					// }
+				}
+				.sticker-showcase{
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 2vw;
+					padding: 2vw;
+					align-items: center;
+					.img-part{
+						max-width: 100%;
+						img{
+							max-width: 100%;
+							max-height: 100%;
+							transform: translateZ(50px);
+						}
+					}
+					.text-part{
+						background-color: #F482B9;
+						font-size: .6vw;
+						padding: .9vw;
+						perspective: 20rem;
+						height: fit-content;
+						hr{
+							color: white;
+							border: none;
+							height: 2px;
+							background-color: white;
+							margin: .4vw 0;
+						}
+						p{
+							color: #ffffff;
+							font-family: var(--font-secondary);
+							text-shadow: none;
+						}
+						h2{
+							font-size: 1.3vw;
+						}
+					}
+				}
+			}
+		}
+
+		.book-nav{
+			height: 100%;
+			width: 125%;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			pointer-events: none;
+			.spade-nav{
+				pointer-events: all;
+				cursor: pointer;
+				img{
+					width: 6vw;
+				}
+				&.left{
+					rotate: .5turn;
+					&:hover{
+						transform: translateX(1vw);
+						scale: 1.04;
+					}
+					&:active{
+						scale: .8;
+					}
+				}
+				&.right{
+					&:hover{
+						transform: translateX(1vw);
+						scale: 1.04;
+					}
+					&:active{
+						scale: .8;
+					}
+				}
+				transition: all 250ms ease;
+				
+				
+			}
+		}
+	}
+	.bottom-nav{
+		width: 100%;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+		gap:2vw;
+		margin: .8vw;
+		position: relative;
+		z-index: 200;
+		button{
+			background-color: #752432;
+			color: #FFE03D;
+			border: none;
+			padding: .5vw;
+			display: flex;
+			align-items: center;
+			gap: 3em;
+			border-radius: .5vw;
+			cursor: pointer;
+			&:hover{
+				scale: 1.05;
+			}
+			&:active{
+				scale: .95;
+			}
+		}
+	}
+}

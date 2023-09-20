@@ -15,8 +15,8 @@ export default function RoulettePage() {
 	return (
 		<div id="container_roulette">
 			<div className="roulette">
-					<img src="/static/art/roulette_wheel.png" alt="" className='decor_roulette' ref={rouletteRef} />
-					<img src="/static/art/roulette_arrow.png" alt="" className='decor_arrow' />
+				<img src="/static/art/roulette_wheel.png" alt="" className='decor_roulette' ref={rouletteRef} />
+				<img src="/static/art/roulette_arrow.png" alt="" className='decor_arrow' />
 			</div>
 			<div className="container_spinner-image">
 				<div className="decor_spinner">

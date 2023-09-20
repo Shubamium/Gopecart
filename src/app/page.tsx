@@ -59,9 +59,9 @@ export default function Home() {
 			<div className="scroll-container" ref={containerRef}>
 				<section id="decoration">
 					<div className="blackhole">
-						<img src="/static/art/blackhole.png" alt="" className='decor_blackhole' />
-						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring glow-purple' />
-						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring_hr glow-purple' />
+						<img src="/static/art/blackhole.png" alt="" className='decor_blackhole'  />
+						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring glow-purple'  />
+						<img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring_hr glow-purple fadejs' />
 						{/* <img src="/static/art/decor/decor_normal-ring.png" alt="" className='decor_ring_hr second' /> */}
 						<div className='decor_stars glow-purple' />
 

@@ -19,15 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${amarante.variable} ${baskerville.variable}`}>
-	  	<header id='header'>
-			<Navigation/>
-		</header>
-	  	<main>
-		  {children}
-		</main>
-		<Footer/>
-	  </body>
+		<body className={`${amarante.variable} ${baskerville.variable}`}>
+			<header id='header'>
+				<Navigation/>
+			</header>
+			<main>
+			{children}
+			</main>
+			<Footer/>
+		</body>
     </html>
   )
 }
