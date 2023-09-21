@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import './commission.scss'
-
+import {TbTriangleInvertedFilled} from 'react-icons/tb'
 type commission = {
 	name:string;
 	subText:string;
@@ -65,6 +65,7 @@ export default function CommissionPage() {
 	const [activeCommission,setActiveCommission] = useState(0);
 	return (
 		<div id="container_commission">
+
 			<div className="commission-info-panel">
 				<div className="detail">
 					<h2 className='title'>{commissionData[activeCommission].name}</h2>
@@ -79,19 +80,30 @@ export default function CommissionPage() {
 					</div>
 				</div>
 			</div>
+
 			<div className="table">
-			<img src="/static/art/decor/commission_table.png" alt=""  className='decor_table'/>
+				<img src="/static/art/decor/commission_table.png" alt=""  className='decor_table'/>
 			</div>
+
 			<div className="cards">
 				{commissionData.map((data,index)=>{
 					return <CommissionCard onClick={()=>{setActiveCommission(index)}} commission={data} order={index} total={commissionData.length} key={'commision-card-'+index}/>
 				})}
 			</div>
-			{/* <div className="character">
-				
-				<div className="dialogue">
+			<div className="character">
+				<img src="/static/art/gopec.png" alt="" className='portrait' />
+				<div className="dialogue-box">
+					<h2 className='name'>Gopec -</h2>
+					<hr />
+					<p className='dialogue'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima. Dolor natus animi officiis explicabo unde? Possimus magnam quos quas, minus optio commodi ipsa non aspernatur, quo adipisci, neque eligendi.
+					</p>
+
+					<div className="continue-dialogue">
+						<TbTriangleInvertedFilled/>
+					</div>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	)
 }

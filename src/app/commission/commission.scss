@@ -126,4 +126,79 @@
 			}
 		}
 	}
+
+	.character{
+		height: 100%;
+		background-color: rebeccapurple;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		display: flex;
+		flex-direction: column;
+		.portrait{
+			position: absolute;
+			width: 34vw;
+			object-fit: contain;
+			left: 0%;
+			z-index: -2000;
+			// background-color: red;
+			bottom: 10%;
+			transition: bottom 250ms ease;
+			&:hover{
+				bottom: 15%;
+			}
+		}
+		.dialogue-box{
+			position: absolute;
+			width: 30vw;
+			bottom: 10%;
+			left: 2vw;
+			height: 13vw;
+			background-color: #23132F;
+			border: .2vw solid #EEB74D;
+			border-radius: .4vw;
+			padding: 1.4vw;
+			.name{
+				font-size: 1.6vw;
+			}
+			hr{
+				border: none;
+				height: 2px;
+				background-color: white;
+				margin: .5vw 0;
+			}
+			.dialogue{
+				font-size: 1vw;
+			}
+			.continue-dialogue{
+				position: absolute;
+				pointer-events: none;
+				width: 100%;
+				height: 100%;
+				top: 0%;
+				right: -2%;
+				svg{
+					position: absolute;
+					right: 5%;
+					bottom: 0%;
+					animation: continue-dialogue 1s infinite ease-in-out;
+					height: 1.5vw;
+					overflow: .2;
+					width: 1.5vw;
+				}
+			}
+		}
+	}
+}
+
+@keyframes continue-dialogue {
+	from{
+		bottom: 5%;
+	}
+	50%{
+		bottom: 10%;
+	}
+	to{
+		bottom: 5%;
+	}
 }
