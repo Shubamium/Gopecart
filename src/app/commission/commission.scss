@@ -14,11 +14,12 @@
 		.detail{
 			text-align: right;
 			.title{
-				font-size: 2.5vw;
+				font-size: 2.8vw;
 				color: #FFB160;
 			}
 			.sub-title{
-				font-size: 2vw;
+				font-size: 1.5vw;
+				opacity: .5;
 			}
 			.price{
 				font-size: 4vw;
@@ -41,7 +42,7 @@
 				img{
 					height: 19vw;
 					width: 100%;
-					object-fit: contain;
+					object-fit: cover;
 					background-color: #272021;
 					outline: .2vw solid #DF5377;
 					border: none;
@@ -103,7 +104,10 @@
 				transform: translateY(2vw);
 				outline: .1vw solid white  ;
 				border: .2vw solid #DF5377;
-				
+				.icon,.name{
+					filter: invert(0%);
+
+				}
 			}
 
 			&:active{
@@ -116,6 +120,9 @@
 			.icon{
 				width: 5vw;
 				opacity: .5;
+			}
+			.icon,.name{
+				filter: invert(70%);
 			}
 		}
 	}

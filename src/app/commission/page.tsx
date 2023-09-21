@@ -5,50 +5,77 @@ import './commission.scss'
 
 type commission = {
 	name:string;
+	subText:string;
 	price:number;
+	showcase:{
+		big:string,
+		small:string
+	}
 }
 export default function CommissionPage() {
 
 	const commissionData:commission[] = [
 		{
-			name:'Package Name',
-			price:50
+			name:'Headshot',
+			subText:'+15$ per extra character',
+			price:20,
+			showcase:{
+				big:'https://i.ibb.co/G0MsZqD/embedlinkicon.png',
+				small:'https://i.ibb.co/G0MsZqD/embedlinkicon.png'
+			}
 		},
 		{
-			name:'Package Name',
-			price:50
+			name:'Half Body',
+			subText:'+15$ per extra character',
+			price:40,
+			showcase:{
+				big:'https://i.ibb.co/G0MsZqD/embedlinkicon.png',
+				small:'https://i.ibb.co/G0MsZqD/embedlinkicon.png'
+			}
 		},
 		{
-			name:'Package Name',
-			price:50
+			name:'Full Body',
+			subText:'+15$ per extra character',
+			price:50,
+			showcase:{
+				big:'https://i.ibb.co/G0MsZqD/embedlinkicon.png',
+				small:'https://i.ibb.co/G0MsZqD/embedlinkicon.png'
+			}
 		},
 		{
-			name:'Package Name',
-			price:50
+			name:'Emotes / Stickers',
+			subText:'Prices may vary depending on complexity',
+			price:10,
+			showcase:{
+				big:'https://i.ibb.co/G0MsZqD/embedlinkicon.png',
+				small:'https://i.ibb.co/G0MsZqD/embedlinkicon.png'
+			}
 		},
 		{
-			name:'Package Name',
-			price:50
-		},{
-			name:'Package Name',
-			price:50
-		}
+			name:'Thumbnails',
+			subText:'Prices may vary depending on complexity',
+			price:50,
+			showcase:{
+				big:'https://i.ibb.co/G0MsZqD/embedlinkicon.png',
+				small:'https://i.ibb.co/G0MsZqD/embedlinkicon.png'
+			}
+		},
 	]
 
-	const [activeCommission,setActieCommission] = useState(0);
+	const [activeCommission,setActiveCommission] = useState(0);
 	return (
 		<div id="container_commission">
 			<div className="commission-info-panel">
 				<div className="detail">
-					<h2 className='title'>FULL BODY</h2>
-					<p className="sub-title">Details Here / Sub Text</p>
-					<p className='price '>$50</p>
+					<h2 className='title'>{commissionData[activeCommission].name}</h2>
+					<p className="sub-title">{commissionData[activeCommission].subText}</p>
+					<p className='price '>${commissionData[activeCommission].price}</p>
 				</div>
 				<div className="showcase">
 					<h2 className='title'>Samples</h2>
 					<div className="img-part">
-						<img src="" className='img-large' alt="s" />
-						<img src="" className='img-small' alt="s" />
+						<img src={commissionData[activeCommission].showcase.big} className='img-large' alt="s" />
+						<img src={commissionData[activeCommission].showcase.small} className='img-small' alt="s" />
 					</div>
 				</div>
 			</div>
@@ -57,7 +84,7 @@ export default function CommissionPage() {
 			</div>
 			<div className="cards">
 				{commissionData.map((data,index)=>{
-					return <CommissionCard commission={data} order={index} total={commissionData.length} key={'commision-card-'+index}/>
+					return <CommissionCard onClick={()=>{setActiveCommission(index)}} commission={data} order={index} total={commissionData.length} key={'commision-card-'+index}/>
 				})}
 			</div>
 			{/* <div className="character">
@@ -68,7 +95,7 @@ export default function CommissionPage() {
 		</div>
 	)
 }
-function CommissionCard({order,total,commission}:{order:number,total:number,commission:commission}){
+function CommissionCard({order,total,commission,onClick}:{onClick:()=>void,order:number,total:number,commission:commission}){
 	const icons = [
 		'spades',
 		'club',
@@ -76,7 +103,7 @@ function CommissionCard({order,total,commission}:{order:number,total:number,comm
 		'heart'
 	]
 	return ( 
-		<div className="card" style={{rotate:`${(order - Math.ceil(total/2))*5}deg`}}>
+		<div className="card" style={{rotate:`${(order - Math.ceil(total/2))*5}deg`}} onClick={onClick}>
 			<h2 className='name'>
 				{commission.name}
 			</h2>
