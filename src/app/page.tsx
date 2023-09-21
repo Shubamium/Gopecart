@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import './home.scss'
 
 import {FaDiscord,FaTiktok,FaTwitter,FaYoutube} from 'react-icons/fa'
+import Contacts from '@/components/general/contacts/Contacts';
 
 export default function Home() {
 	const [activeContent,setActiveContent] = useState(0);
@@ -22,20 +23,7 @@ export default function Home() {
 					</svg>
 					<h2>Contacts</h2>
 				</div>
-				<div className="contacts">
-					<a href="https://www.youtube.com/c/GopecArt" target='_blank' className="contact">
-						<FaYoutube/>
-					</a>
-					<a href="https://twitter.com/gopec_" target='_blank' className="contact">
-						<FaTwitter/>
-					</a>
-					<a href="https://www.tiktok.com/@gopecart" target='_blank' className="contact">
-						<FaTiktok/>
-					</a>
-					<a href="https://discord.gg/NwVTMHt" target='_blank' className="contact">
-						<FaDiscord/>
-					</a>
-				</div>
+				<Contacts/>
 			</article>
 		),
 	]

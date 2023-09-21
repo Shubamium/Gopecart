@@ -17,6 +17,27 @@
 			font-family: var(--font-secondary);
 		}
 	}
+	.contacts{
+		display: flex;
+		gap: .4em;
+		.contact{
+			background-color: white;
+			aspect-ratio: 1/1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: .2em;
+			svg{
+				color: black;
+			}
+			.text{
+				display: none;
+			}
+			&:hover{
+				scale: 1.1;
+			}
+		}
+	}
 	.credits{
 		color: white;
 		text-decoration: none;

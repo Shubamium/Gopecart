@@ -8,7 +8,7 @@ const allImageLink = [
 	'https://i.ibb.co/wdwVTzJ/Fqf-NNc-TXw-AMTKfp.jpg',
 	'https://i.ibb.co/9gFZbfV/Fs-M03-Wj-WAAMOTTh.jpg',
 	'https://i.ibb.co/8n3SbvM/Pond-Drowned-Crossarms.png',
-	'https://i.ibb.co/yWQwwsf/IMG-8180.webp'
+	'https://i.ibb.co/phYFSXy/thumb5.jpg'
 ]
 
 export default function SlotsPage() {

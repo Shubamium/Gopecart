@@ -5,13 +5,20 @@ export default function RoulettePage() {
 	const rouletteRef = useRef<HTMLImageElement>(null);
 	useEffect(()=>{
 		window.addEventListener('scroll',()=>{
-			console.log(window.scrollY)
 			if(rouletteRef.current){
 				const rouletteEl = rouletteRef.current;
 				rouletteEl.style.rotate = `${window.scrollY/8}deg`
 			}
 		})
 	},[]);
+	const imageList = [
+		'https://i.ibb.co/vQFYPwV/thumb1.png',
+		'https://i.ibb.co/hC3NCGr/thumb2.png',
+		'https://pbs.twimg.com/media/F6BhoHLXsAALs07?format=jpg&name=large',
+		'https://i.ibb.co/PjNzxzY/thumb3.jpg',
+		'https://i.ibb.co/Thp4RqN/thumb4.jpg',
+
+	]
 	return (
 		<div id="container_roulette">
 			<div className="roulette">
@@ -22,10 +29,11 @@ export default function RoulettePage() {
 				<div className="decor_spinner">
 					<img src="/static/art/roulette_spinner.png" alt=""  />
 				</div>
-				<SpinnerImage src="https://pbs.twimg.com/media/F6BhoHLXsAALs07?format=jpg&name=large"/>
-				<SpinnerImage src="https://pbs.twimg.com/media/F6BhoHLXsAALs07?format=jpg&name=large"/>
-				<SpinnerImage src="https://pbs.twimg.com/media/F6BhoHLXsAALs07?format=jpg&name=large"/>
-				<SpinnerImage src="https://pbs.twimg.com/media/F6BhoHLXsAALs07?format=jpg&name=large"/>
+				{imageList.map((imgSrc,index)=>{
+					return ( 
+						<SpinnerImage src={imgSrc} key={'spinner-img'+index}/>
+					)	
+				})}
 			</div>
 		</div>
 	)
