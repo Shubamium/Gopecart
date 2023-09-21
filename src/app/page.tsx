@@ -4,7 +4,6 @@ import './home.scss'
 
 import {FaDiscord,FaTiktok,FaTwitter,FaYoutube} from 'react-icons/fa'
 
-
 export default function Home() {
 	const [activeContent,setActiveContent] = useState(0);
 	const containerRef =  useRef<HTMLDivElement>(null)

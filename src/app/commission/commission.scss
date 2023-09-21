@@ -1,0 +1,122 @@
+#container_commission{
+	overflow: hidden;
+	min-height: 100vh;
+	.commission-info-panel{
+		height: 30vw;
+		width: 50vw;
+		left: 10%;
+		position: relative;
+		top: 10vh;
+		margin: 0 auto;
+		background: linear-gradient(90deg, rgb(35, 19, 47) 0.28%, #424776 143.2%);
+		border: .2vw solid #EEB74D;
+		padding: 2vw;
+		.detail{
+			text-align: right;
+			.title{
+				font-size: 2.5vw;
+				color: #FFB160;
+			}
+			.sub-title{
+				font-size: 2vw;
+			}
+			.price{
+				font-size: 4vw;
+				text-shadow: none;
+			}
+		}
+		.showcase{
+			transform: translateY(-35%);
+			.title{
+				color:#FFB160;
+				font-size: 2vw;
+				margin: .5vw 0;
+			}
+			.img-part{
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				align-items: end;
+				max-width: 80%;
+				gap: 2vw;
+				img{
+					height: 19vw;
+					width: 100%;
+					object-fit: contain;
+					background-color: #272021;
+					outline: .2vw solid #DF5377;
+					border: none;
+					&.img-small{
+						height: 10vw;
+					}
+				}
+			}
+		}
+	}
+
+	
+	.table{
+		overflow: hidden;
+		height: 20vw;
+		position: absolute;
+		bottom: 0%;
+		z-index: -400;
+		width: 100%;
+		// background-color: green;
+		.decor_table{
+			width: 100%;
+			position: relative;
+			bottom: -42%;
+			scale: 1.2;
+		}
+	}
+
+	.cards{
+		position: fixed;
+		height: 20vw;
+		padding: 2vw;
+		display: flex;
+		bottom: 0%;
+		right: 10vw;
+		width: 100%;
+		justify-content: end;
+		padding-left: 10vw;
+		.card{
+			margin-right: -3vw;
+			transform: translateY(4vw);
+			transition: all 250ms ease;
+			
+			height: 120%;
+			width: 13vw;
+			background: #302A2A;
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			flex-direction: column;
+			gap: .5vw;
+			border: .2vw solid #FFC90C;
+			border-radius: .8vw;
+			cursor: pointer;
+			
+			padding: .5vw;
+
+			&:hover{
+				transform: translateY(2vw);
+				outline: .1vw solid white  ;
+				border: .2vw solid #DF5377;
+				
+			}
+
+			&:active{
+				scale: .9;
+			}
+			.name{
+				font-size: 2vw;
+				text-align: center;
+			}
+			.icon{
+				width: 5vw;
+				opacity: .5;
+			}
+		}
+	}
+}
