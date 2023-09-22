@@ -25,8 +25,10 @@ export default function SlotsPage() {
 			setIsPlaying(false);
 			setTimeout(() => {
 				setIsPlaying(true);
-				setCanPlay(true);
 				randomizeImage();
+				setTimeout(() => {
+					setCanPlay(true);
+				}, animationDuration + 2500);
 			}, animationDuration + 2500);
 		}else{
 			setIsPlaying(true)
@@ -34,7 +36,7 @@ export default function SlotsPage() {
 			setTimeout(() => {
 				setIsPlaying(true)
 				setCanPlay(true)
-			}, animationDuration + 1500);
+			}, animationDuration + 2500);
 		}
 	}
 	const randomizeImage = ()=>{
