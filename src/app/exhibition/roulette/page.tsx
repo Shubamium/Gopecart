@@ -1,4 +1,4 @@
-import { client, urlFor } from '@/db/client';
+import { client, fetchData, urlFor } from '@/db/client';
 import './roulette.scss'
 import SpinnerWheel from './spineerWheel/SpinnerWheel';
 
@@ -11,15 +11,11 @@ type rouletteData = {
 
 export default async function RoulettePage() {
 	
-	const rouletteData = await client.fetch<rouletteData[]>(`*[_type == "roulette" && id == "main"]{
+	const rouletteData = await fetchData<rouletteData[]>(`*[_type == "roulette" && id == "main"]{
 		_id,
 		id,
 		images
-	 }`,{
-		next:{
-			cache:5
-		}
-	});
+	 }`);
 	
 	const imageList = rouletteData[0].images.map((data)=>{
 		try{

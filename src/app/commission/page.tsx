@@ -1,6 +1,6 @@
 
 
-import { client, urlFor } from '@/db/client';
+import { client, fetchData, urlFor } from '@/db/client';
 import Commission, { commission } from './commission';
 import './commission.scss'
 
@@ -55,10 +55,11 @@ const commissionMockData:commission[] = [
 	},
 ]
 
+
 // type commissionData =
 export default async function CommissionPage() {
 	
-	let commissionData = await client.fetch<any[]>(`*[_type == "commission"]{
+	let commissionData = await fetchData<any[]>(`*[_type == "commission"]{
 		_id,
 		id,
 		title,
@@ -66,11 +67,7 @@ export default async function CommissionPage() {
 		price,
 		sample_big,
 		sample_small
-	 }`,{
-		next:{
-			cache:5
-		}
-	});
+	 }`);
 	
 	const formatData = (commissionData:any[])=>{
 		return commissionData.map((comms)=>{

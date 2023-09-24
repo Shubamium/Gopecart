@@ -1,5 +1,5 @@
 
-import { client } from '@/db/client';
+import { client, fetchData } from '@/db/client';
 import Book from './book'
 import './book.scss'
 
@@ -28,15 +28,11 @@ export type bookData = {
 
 export default async function BooksPage() {
 	
-	const allPages = await client.fetch<bookData[]>(`*[_type == "book" && id == "main"]{
+	const allPages = await fetchData<bookData[]>(`*[_type == "book" && id == "main"]{
 		_id,
 		id,
 		book_pages
-	 }`,{
-		next:{
-			cache:5
-		}
-	});
+	 }`);
 	console.log(allPages[0]);
 	return (
 		<div id="container_book">
