@@ -49,6 +49,12 @@
 					&.img-small{
 						height: 10vw;
 					}
+					cursor: pointer;
+					transition: all 250ms ease;
+					&:hover{
+						scale: .95;
+						filter: brightness(50%);
+					}
 				}
 			}
 		}

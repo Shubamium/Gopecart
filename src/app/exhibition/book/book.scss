@@ -6,15 +6,12 @@ main{
 	margin-top: 10vh;
 	height: 100%;
 	.book{
-		// background-color: #2d2f42;
 		background-color: #1a1a12;
 		border: .2vw solid #EEB74D ;
 		width: 70vw;
 		height: 75vh;
 		margin: 0 auto;
 		border-radius: .2vw;
-		// display: grid;
-		// grid-template-columns: 1fr 1fr;
 		perspective: 2500px;
 		position: relative;
 
@@ -122,32 +119,54 @@ main{
 					align-items: center;
 					.img-part{
 						max-width: 100%;
+						&:hover{
+							img{
+								scale: 1.2;
+								transform: rotateY(1turn) ;
+								rotate: -5deg;
+							}
+						}
 						img{
 							max-width: 100%;
 							max-height: 100%;
+							transition: all 550ms ease-in-out;
 							// transform: translateZ(50px);
 						}
 					}
+					
 					.text-part{
 						background-color: #F482B9;
-						font-size: .6vw;
 						padding: .9vw;
 						perspective: 20rem;
 						height: fit-content;
+						border-radius: .2vw;
+						&:hover{
+							rotate: -2deg;
+						}
 						hr{
 							color: white;
 							border: none;
-							height: 2px;
+							height: .1vw;
+							border-radius: 2vw;
+							box-shadow: none;
 							background-color: white;
 							margin: .4vw 0;
 						}
-						p{
+						.description{
 							color: #ffffff;
 							font-family: var(--font-secondary);
 							text-shadow: none;
+							font-size: .82vw;
+							opacity: .9;
+							p{
+								font-weight: 300;
+								color: rgb(246, 246, 246);
+								text-shadow: none;
+							}
 						}
+						
 						h2{
-							font-size: 1.3vw;
+							font-size: 1.5vw;
 						}
 					}
 				}

@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import StripLoop from './stripLoop/StripLoop';
+import useLightbox from '@/components/hooks/useLightbox';
+import Lightbox from '@/components/general/lightbox/Lightbox';
 
 // Mock data
 const allImageLink = [
@@ -51,6 +53,8 @@ export default function Slots({images}: Props) {
 		}
 		setActiveImages(imageList);
 	}
+	
+	const { closeLightbox,showImage,state} = useLightbox();
 
 	return (
 		<>
@@ -69,7 +73,7 @@ export default function Slots({images}: Props) {
 									<StripLoop/>
 									<StripLoop/>
 									<div className="strip-image">
-										<img src={activeImages[0]} alt="" />
+										<img src={activeImages[0]} alt="" onClick={()=>showImage(activeImages[0])} />
 									</div>
 								</div>
 							</div>
@@ -82,7 +86,7 @@ export default function Slots({images}: Props) {
 									<StripLoop/>
 									<StripLoop/>
 									<div className="strip-image">
-										<img src={activeImages[1]} alt="" />
+										<img src={activeImages[1]} alt=""  onClick={()=>showImage(activeImages[1])}/>
 									</div>
 								</div>
 							</div>
@@ -95,7 +99,7 @@ export default function Slots({images}: Props) {
 									<StripLoop/>
 									<StripLoop/>
 									<div className="strip-image">
-										<img src={activeImages[2]} alt="" />
+										<img src={activeImages[2]} alt=""onClick={()=>showImage(activeImages[2])} />
 									</div>
 								</div>
 							</div>
@@ -103,6 +107,8 @@ export default function Slots({images}: Props) {
 					</div>
 			</div>
 			<button onClick={startSlots} disabled={!canPlay} className='pull-btn'>Pull</button>
+			{state.isOpen && <Lightbox src={state.src} onCloseBox={closeLightbox}/>}
+
 		</>
 	)
 }

@@ -1,5 +1,5 @@
 #container_slots{
-	height: 100vh;
+	min-height: 100vh;
 	.slots{
 		position: fixed;
 		width: 100%;
@@ -12,6 +12,7 @@
 			width: 70vw;
 			height: 40vw;
 			position: relative;
+			pointer-events: none;
 			.machine{
 				position: absolute;
 				top: 0%;
@@ -32,16 +33,18 @@
 				height: 100%;
 				gap: 1vw;
 				padding: 2vw;
+				pointer-events: none;
 				.frame{
 					max-height: 100%;
 					width: 19vw;
-
+					pointer-events: none;
 					$height:27vw;
 					height: $height;
 					border-radius: 2vw;
 					background-color: rebeccapurple;
 					position: relative;
 					overflow: hidden;
+					pointer-events: none;
 					.frame_bg{
 						width: 100%;
 						height: 100%;
@@ -88,10 +91,18 @@
 							top: 100%;
 							width: 100%;
 							height: 30vw;
+							pointer-events: all;
 							img{
 								height: 100%;
 								width: 100%;
 								object-fit: cover;
+								transition: all 250ms ease;
+								cursor: pointer;
+								&:hover{
+									scale: 1.1;
+									object-fit: contain;
+									filter: brightness(50%);
+								}
 							}
 						}
 						

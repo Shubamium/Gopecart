@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import CommissionCard from './commissionCard/CommissionCard'
 import { TbTriangleInvertedFilled } from 'react-icons/tb';
+import useLightbox from '@/components/hooks/useLightbox';
+import Lightbox from '@/components/general/lightbox/Lightbox';
 
 export type commission = {
 	name:string;
@@ -21,7 +23,7 @@ type CommissionProps = {
 
 export default function Commission({commissionData}: CommissionProps) {
 	const [activeCommission,setActiveCommission] = useState(0);
-
+	const {closeLightbox,showImage,state } = useLightbox();
 	return (
 		<>
 				
@@ -36,8 +38,8 @@ export default function Commission({commissionData}: CommissionProps) {
 			<div className="showcase">
 					<h2 className='title'>Samples</h2>
 					<div className="img-part">
-						<img src={commissionData[activeCommission].showcase.big} className='img-large' alt="s" />
-						<img src={commissionData[activeCommission].showcase.small} className='img-small' alt="s" />
+						<img src={commissionData[activeCommission].showcase.big} onClick={()=>showImage(commissionData[activeCommission].showcase.big)} className='img-large' alt="s" />
+						<img src={commissionData[activeCommission].showcase.small} onClick={()=>showImage(commissionData[activeCommission].showcase.small)} className='img-small' alt="s" />
 					</div>
 				</div>
 			</div>
@@ -66,6 +68,8 @@ export default function Commission({commissionData}: CommissionProps) {
 					</div>
 				</div>
 			</div>
+
+			{state.isOpen && <Lightbox src={state.src} onCloseBox={closeLightbox}/>}
 		</>
   )
 }

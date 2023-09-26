@@ -4,8 +4,7 @@ import { MouseEventHandler, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { bookData } from './page';
 import { urlFor } from '@/db/client';
-import PortableText from 'react-portable-text';
-
+import PortableText from 'react-portable-text'
 type Props = {
 	bookData:bookData
 }
@@ -84,7 +83,9 @@ export default function Book({bookData}: Props) {
 												<h2>{frontPage.top.title}</h2>
 												{frontPage.top.description && <>
 													<hr />
-													<PortableText content={frontPage.top.description}/>
+													<div className="description">
+															<PortableText content={frontPage.top.description}/>
+													</div>
 												</>}
 											</div>
 										</section>
@@ -97,7 +98,9 @@ export default function Book({bookData}: Props) {
 												<h2>{frontPage.bottom.title}</h2>
 												{frontPage.bottom.description && <>
 													<hr />
-													<PortableText content={frontPage.bottom.description}/>
+													<div className="description">
+															<PortableText content={frontPage.bottom.description}/>
+													</div>
 												</>}
 											</div>
 											<div className="img-part">
@@ -123,7 +126,9 @@ export default function Book({bookData}: Props) {
 												<h2>{backPage.top.title}</h2>
 												{backPage.top.description && <>
 													<hr />
-													<PortableText content={backPage.top.description}/>
+													<div className="description">
+														<PortableText content={backPage.top.description}/>
+													</div>
 												</>}
 											</div>
 										</section>
@@ -136,7 +141,9 @@ export default function Book({bookData}: Props) {
 												<h2>{backPage.bottom.title}</h2>
 												{backPage.bottom.description && <>
 													<hr />
-													<PortableText content={backPage.bottom.description}/>
+													<div className="description">
+														<PortableText content={backPage.bottom.description}/>
+													</div>
 												</>}
 											</div>
 											<div className="img-part">
