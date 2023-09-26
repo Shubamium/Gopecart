@@ -51,7 +51,6 @@ export default function Slots({images}: Props) {
 			playSpinnerAudio();
 			setTimeout(() => {
 				setIsPlaying(true)
-				playSpinnerAudio();
 				setCanPlay(true)
 			}, animationDuration + 2500);
 		}
@@ -92,7 +91,7 @@ export default function Slots({images}: Props) {
 
 		setTimeout(() => {
 			play()
-		}, 1600);
+		}, 1900);
 		setTimeout(() => {
 			play()
 		} ,2800)
