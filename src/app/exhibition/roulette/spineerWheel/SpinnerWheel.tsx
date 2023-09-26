@@ -1,14 +1,13 @@
 'use client'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import SpinnerImage from "../spinnerImage/SpinnerImage"
 import Lightbox from "@/components/general/lightbox/Lightbox";
+import useLightbox from "@/components/hooks/useLightbox";
 type SpinnerWheelProps = {
 	imageList:string[]
 }
 export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 	const rouletteRef = useRef<HTMLImageElement>(null);
-	const [galleryImage, setGalleryImage] = useState('');
-	const [gallery,setGallery] = useState(false);
 
 	useEffect(()=>{
 		window.addEventListener('scroll',()=>{
@@ -19,6 +18,7 @@ export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 		})
 	},[imageList]);
 	
+	const {showImage,closeLightbox,state} = useLightbox();
 	
 	return ( 
 		<>
@@ -32,12 +32,12 @@ export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 				</div>
 				{imageList.map((imgSrc,index)=>{
 					return ( 
-						<SpinnerImage src={imgSrc} onClick={()=>{setGallery(true);setGalleryImage(imgSrc)}} key={'spinner-img'+index}/>
+						<SpinnerImage src={imgSrc} onClick={()=>{showImage(imgSrc)}} key={'spinner-img'+index}/>
 					)	
 				})}
 			</div>
 
-			{gallery && <Lightbox src={galleryImage} onCloseBox={()=>{setGallery(false);setGalleryImage("")}}/>}
+			{state.isOpen && <Lightbox src={state.src} onCloseBox={closeLightbox}/>}
 		</>
 	)
 }
