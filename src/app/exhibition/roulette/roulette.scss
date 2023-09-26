@@ -56,6 +56,13 @@
 				height: 100%;
 				object-fit: cover;
 				background-color: black;
+				transition: all 250ms ease;
+				&:hover{
+					object-fit: contain;
+					scale: .98;
+					cursor: pointer;
+					filter:brightness(40%);
+				}
 			}
 		}
 	}

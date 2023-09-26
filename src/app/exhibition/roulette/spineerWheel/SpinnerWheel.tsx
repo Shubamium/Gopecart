@@ -1,13 +1,15 @@
 'use client'
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SpinnerImage from "../spinnerImage/SpinnerImage"
-
+import Lightbox from "@/components/general/lightbox/Lightbox";
 type SpinnerWheelProps = {
 	imageList:string[]
 }
 export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 	const rouletteRef = useRef<HTMLImageElement>(null);
-	
+	const [galleryImage, setGalleryImage] = useState('');
+	const [gallery,setGallery] = useState(false);
+
 	useEffect(()=>{
 		window.addEventListener('scroll',()=>{
 			if(rouletteRef.current){
@@ -30,10 +32,12 @@ export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 				</div>
 				{imageList.map((imgSrc,index)=>{
 					return ( 
-						<SpinnerImage src={imgSrc} key={'spinner-img'+index}/>
+						<SpinnerImage src={imgSrc} onClick={()=>{setGallery(true);setGalleryImage(imgSrc)}} key={'spinner-img'+index}/>
 					)	
 				})}
 			</div>
+
+			{gallery && <Lightbox src={galleryImage} onCloseBox={()=>{setGallery(false);setGalleryImage("")}}/>}
 		</>
 	)
 }

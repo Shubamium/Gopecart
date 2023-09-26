@@ -1,0 +1,60 @@
+.lightbox{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: 50000;
+	background-color: rgba(0, 0, 0, 0.889);
+	top: 0%;
+	left: 0%;
+	padding:1vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	animation: modal 1s ease;
+	img{
+		border-radius: .2vw;
+		filter: drop-shadow(0vw 0vw 1vw rgba(255, 255, 255, 0.528));
+		max-width: 92%;
+		max-height: 100%;
+		object-fit: contain;
+		height: 80%;
+		animation: start 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+	}
+	.lightbox-close-btn{
+		font-size: 1.2vw;
+		border: none;
+		background-color: #752432;
+		color: #FFE03D;
+		padding: .2vw 2vw;
+		border-radius: .5vw;
+		position: absolute;
+		right: 2%;
+		top: 2%;
+		transition: all 250ms ease;
+		cursor: pointer;
+		&:hover{
+			scale: 1.05;
+		}
+	}
+}
+@keyframes modal {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes start{
+	0%{
+		opacity: 0;
+		scale: 0;
+	}
+	100%{
+		scale: 1;
+		opacity: 1;
+	}
+}

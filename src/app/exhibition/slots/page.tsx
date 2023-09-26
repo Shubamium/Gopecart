@@ -7,7 +7,7 @@ type SlotsData = {
 	images: any[]
 }
 export default async function SlotsPage() {
-	const slotsData = await fetchData<SlotsData[]>(`*[_type == "roulette" && id == "main"]{
+	const slotsData = await fetchData<SlotsData[]>(`*[_type == "slots" && id == "main"]{
 		_id,
 		id,
 		images

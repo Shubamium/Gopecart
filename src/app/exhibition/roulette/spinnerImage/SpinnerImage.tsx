@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function SpinnerImage({src}:{src:string}){
+export default function SpinnerImage({src,onClick}:{src:string,onClick:()=>void}){
 
 	const spinnerRef = useRef<HTMLDivElement>(null);
 	useEffect(()=>{
@@ -57,7 +57,7 @@ export default function SpinnerImage({src}:{src:string}){
 	},[])
 	return (
 		<div className="spinner-image" ref={spinnerRef} >
-			<img src={src} alt="" />
+			<img src={src} alt=""  onClick={onClick}/>
 		</div>
 	)
 }

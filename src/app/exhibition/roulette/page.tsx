@@ -26,7 +26,7 @@ export default async function RoulettePage() {
 	})
 	return (
 		<div id="container_roulette">
-			{<SpinnerWheel imageList={imageList}/>}
+			<SpinnerWheel imageList={imageList}/>
 		</div>
 	)
 }
