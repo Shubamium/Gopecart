@@ -10,6 +10,8 @@
 		margin: 0 auto;
 		background: linear-gradient(90deg, rgb(35, 19, 47) 0.28%, #424776 143.2%);
 		border: .2vw solid #EEB74D;
+		box-shadow: 0vw .2vw 3vw .5vw rgba(0, 0, 0, 0.502);
+
 		padding: 2vw;
 		.detail{
 			text-align: right;
@@ -88,10 +90,12 @@
 		width: 100%;
 		justify-content: end;
 		padding-left: 10vw;
+
 		.card{
 			margin-right: -3vw;
 			transform: translateY(4vw);
 			transition: all 250ms ease;
+			box-shadow: 0vw .2vw 1vw .5vw rgba(0, 0, 0, 0.6);
 			
 			height: 120%;
 			width: 13vw;
@@ -115,6 +119,8 @@
 					filter: invert(0%);
 
 				}
+				box-shadow: 0vw -.1vw 1vw .5vw rgba(255, 187, 29, 0.756);
+
 			}
 
 			&:active{
@@ -165,6 +171,8 @@
 			border: .2vw solid #EEB74D;
 			border-radius: .4vw;
 			padding: 1.4vw;
+			box-shadow: 0vw .2vw 3vw .5vw rgba(0, 0, 0, 0.348);
+
 			.name{
 				font-size: 1.6vw;
 			}
