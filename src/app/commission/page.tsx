@@ -56,21 +56,24 @@ const commissionMockData:commission[] = [
 ]
 
 
-// type commissionData =
+type commissionData = {
+	id:string;
+	title:string;
+	detail:string;
+	price:number;
+	sample_big:any;
+	sample_small:any;
+}
 export default async function CommissionPage() {
 	
-	let commissionData = await fetchData<any[]>(`*[_type == "commission"]{
+	let commissionData = await fetchData<[{id:string,commission:any[]}]>(`*[_type == "commissionList" && id == "main"]{
 		_id,
-		id,
-		title,
-		detail,
-		price,
-		sample_big,
-		sample_small
+		commission
 	 }`);
 	
 	const formatData = (commissionData:any[])=>{
-		return commissionData.map((comms)=>{
+		if(!commissionData || commissionData.length === 0) return null
+		return commissionData[0].commission.map((comms:commissionData)=>{
 		
 			let imageList = [comms.sample_big,comms.sample_small] 
 			imageList = imageList.map((data)=>{
@@ -92,14 +95,14 @@ export default async function CommissionPage() {
 			} as commission
 		})
 	}
-
-	commissionData = formatData(commissionData);
+	if(!commissionData) return null
+	const commissions = formatData(commissionData);
 
 	
 
 	return (
 		<div id="container_commission">
-			<Commission commissionData={commissionData}/>
+			{commissionData && <Commission commissionData={commissions}/>}
 		</div>
 	)
 }

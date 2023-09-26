@@ -53,6 +53,7 @@
 					transition: all 250ms ease;
 					&:hover{
 						scale: .95;
+						object-fit: contain;
 						filter: brightness(50%);
 					}
 				}
