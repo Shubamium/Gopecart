@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import StripLoop from './stripLoop/StripLoop';
 import useLightbox from '@/components/hooks/useLightbox';
 import Lightbox from '@/components/general/lightbox/Lightbox';
@@ -23,15 +23,24 @@ export default function Slots({images}: Props) {
 	const [isPlaying,setIsPlaying] = useState(false);
 	const [canPlay,setCanPlay] = useState(true);
 	const [activeImages,setActiveImages] = useState(['','','']);
+
+	// Audio List
+	const audioSpin = useRef<HTMLAudioElement>(null);
+	const audioPull = useRef<HTMLAudioElement>(null);
+
+	
 	const animationDuration = 4000;
 
 	const startSlots = ()=>{
 		setCanPlay(false)
+		playLeverAudio()
 		if(isPlaying){
 			setIsPlaying(false);
+			playSpinnerAudio()
 			setTimeout(() => {
 				setIsPlaying(true);
 				randomizeImage();
+				playSpinnerAudio();
 				setTimeout(() => {
 					setCanPlay(true);
 				}, animationDuration + 2500);
@@ -39,8 +48,10 @@ export default function Slots({images}: Props) {
 		}else{
 			setIsPlaying(true)
 			randomizeImage();
+			playSpinnerAudio();
 			setTimeout(() => {
 				setIsPlaying(true)
+				playSpinnerAudio();
 				setCanPlay(true)
 			}, animationDuration + 2500);
 		}
@@ -54,6 +65,39 @@ export default function Slots({images}: Props) {
 		setActiveImages(imageList);
 	}
 	
+	const playLeverAudio = ()=>{
+		if(audioPull.current){
+			audioPull.current.play()
+		}
+	}
+
+	const playSpinnerAudio = ()=>{
+		const play = () => {
+			if(audioSpin.current){
+				// audioSpin.current.play();/
+				const newAudio = document.createElement('audio');
+				newAudio.src = audioSpin.current.src;
+
+				document.body.appendChild(newAudio);
+				newAudio.playbackRate = 1.05
+				newAudio.play()
+				newAudio.volume = .5
+				newAudio.addEventListener('ended',()=>{
+					if(newAudio.ended){
+						document.body.removeChild(newAudio)
+					}
+				})
+			}
+		}
+
+		setTimeout(() => {
+			play()
+		}, 1600);
+		setTimeout(() => {
+			play()
+		} ,2800)
+	
+	}
 	const { closeLightbox,showImage,state} = useLightbox();
 
 	return (
@@ -104,8 +148,16 @@ export default function Slots({images}: Props) {
 								</div>
 							</div>
 						</div>
+						<div className="lever">
+							<div className="lever-slider">
+								<img src="/static/art/slot_lever.png" alt=""  className={`decor_lever ${!canPlay ? 'pulling' : ''} glow-purple`} onClick={()=>{canPlay && startSlots()}}/>
+							</div>
+						</div>
 					</div>
 			</div>
+			<audio ref={audioPull} src='/static/audio/lever_pull.wav' controls={false}></audio>
+			<audio ref={audioSpin} src='/static/audio/wheelspin.mp3' controls={false}></audio>
+
 			<button onClick={startSlots} disabled={!canPlay} className='pull-btn'>Pull</button>
 			{state.isOpen && <Lightbox src={state.src} onCloseBox={closeLightbox}/>}
 
