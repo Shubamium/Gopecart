@@ -25,6 +25,8 @@
 					height: 100%;
 					object-fit: contain;
 				}
+
+				
 			}
 			.wheel-frame{
 				display: flex;
@@ -167,6 +169,74 @@
 						transition-delay: 100ms;
 						&:hover{
 						}
+					}
+				}
+			}
+
+			.decor{
+				.decor_eye{
+					height: 5vw;
+					width: 5vw;
+					position: absolute;
+					top: 0%;
+					left: 0%;
+					z-index: 50000;
+					&.top{
+						top: 12%;
+					}
+					&.bottom{
+						top:76%;
+						animation-direction: reverse;
+					}
+
+					&.left{
+						left: 5%;
+						animation-delay: 150ms;
+					}
+					&.center-l{
+						left: 32%;
+						animation-delay: 550ms ;
+					}
+
+					&.center-r{
+						left: 61%;
+						animation-delay: 1050ms ;
+					}
+
+					&.right{
+						left: 88%;
+						animation-delay: 1550ms ;
+					}
+				}
+				
+
+				.decor_title{
+					text-align: center;
+					font-size: 1vw;
+					position: absolute;
+					top: 10%;
+					left: -2%;
+
+					&.bottom{
+						top: 60%;
+					}
+				}
+
+				&.spinning{
+					.decor_eye{
+						animation-name: speen;
+						animation-duration: 15s;
+						animation-timing-function: linear;
+
+					}
+				}
+
+				@keyframes speen {
+					from{
+						rotate: 0turn;
+					}
+					to{
+						rotate: 12turn;
 					}
 				}
 			}

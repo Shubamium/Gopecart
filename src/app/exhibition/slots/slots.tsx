@@ -152,6 +152,46 @@ export default function Slots({images}: Props) {
 								<img src="/static/art/slot_lever.png" alt=""  className={`decor_lever ${!canPlay ? 'pulling' : ''} glow-purple`} onClick={()=>{canPlay && startSlots()}}/>
 							</div>
 						</div>
+						<div className={`decor ${!canPlay ? 'spinning' : ''}`}>
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye top left' />
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye bottom left' />
+							
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye top center-l' />
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye bottom center-l' />
+
+							
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye bottom center-r' />
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye top center-r'/>
+
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye bottom right' />
+							<img src="/static/art/slot_circle.png" alt="" className='decor_eye top right' />
+
+							<p className='decor_title top'>
+								E<br/>
+								X<br/>
+								H<br/>
+								I<br/>
+								B<br/>
+								I<br/>
+								T<br/>
+								I<br/>
+								O<br/>
+								N
+							</p>
+							<p className='decor_title bottom'>
+								C<br/>
+								H<br/>
+								A<br/>
+								R<br/>
+								A<br/>
+								C<br/>
+								T<br/>
+								E<br/>
+								R<br/>
+								S
+							</p>
+							
+						</div>
 					</div>
 			</div>
 			<audio ref={audioPull} src='/static/audio/lever_pull.wav' controls={false}></audio>
