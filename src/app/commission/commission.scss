@@ -254,3 +254,87 @@
 		bottom: 5%;
 	}
 }
+
+@media screen and (max-width:1024px) {
+	#container_commission .commission-info-panel{
+		width: 55vw;
+		height: 40vw;
+		padding-top: 5vw;
+		left: 10%;
+	}
+}
+
+@media screen and (max-width:768px) {
+	#container_commission .commission-info-panel .showcase{
+		transform: initial;
+	}
+	#container_commission .commission-info-panel{
+		left: 0;
+		width: 75%;
+		top: 100px;
+		height: 100%;
+		overflow: auto;
+		padding-bottom: 500px;
+		max-height: 80vh;
+	}
+	#container_commission .commission-info-panel .decor .text-part{
+		font-size: 15px;
+		left: -4%;
+	}
+	#container_commission .commission-info-panel .detail{
+		text-align: center;
+		.title{
+			font-size: 30px;
+		}	
+		.sub-title{
+			font-size: 20px;
+		}
+		.price{
+			font-size: 45px;
+		}
+	}
+
+	#container_commission .commission-info-panel .showcase .img-part{
+		display: flex;
+		flex-direction: column;
+		max-width: initial;
+		max-height: 100%;
+		.decor{
+			opacity: 0%;
+		}
+		img{
+			height: 100% !important;
+			max-height: 40vw;
+		}
+	}
+	#container_commission .character{
+		display: none;
+	}
+	#container_commission .cards{
+		padding: 0;
+		left: 0%;
+		bottom: 10%;
+		height: 30vw;
+		justify-content: center;
+	}
+	#container_commission .commission-info-panel .showcase .title{
+		font-size: 12px;
+		text-align: center;
+	}
+	#container_commission .cards .card{
+		width: 20vw;
+		.name{
+			font-size: 13px;
+
+		}
+		.icon{
+			width: 50%;
+		}
+	}
+	#container_commission .commission-info-panel .decor .decor_cloud{
+		width: 20vw;
+		right: -9%;
+		bottom: -5%;
+	}
+	
+}
