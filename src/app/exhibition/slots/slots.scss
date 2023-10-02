@@ -286,3 +286,20 @@
 		filter: blur(0vw);
 	}
 }
+
+
+@media screen and (max-width:768px) {
+	#container_slots .slots .slots_machine .decor .decor_title{
+		font-size: 15px;
+		position: fixed;
+		top: 15px;
+		left: 15px;
+	}
+
+	#container_slots .pull-btn{
+		width: min(80%,200px);
+		font-size: 15px;
+		bottom: 10%;
+		top: initial;
+	}
+}
