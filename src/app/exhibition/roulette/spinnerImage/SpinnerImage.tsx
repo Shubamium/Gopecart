@@ -42,8 +42,6 @@ export default function SpinnerImage({src,onClick}:{src:string,onClick:()=>void}
 				// Translate the value to an exponential range
 				const exponentialValue = translateToExponential(normalizedOffsetCenter, exponent);
 				
-				console.log(exponentialValue);
-				
 				const scaleDownFactor = .5 * Math.abs(exponentialValue)
 				
 				// Set the styling of the image
@@ -51,13 +49,16 @@ export default function SpinnerImage({src,onClick}:{src:string,onClick:()=>void}
 			}
 		}
 		window.addEventListener('scroll',handleScroll)
+		handleScroll()
 		return ()=>{
 			window.removeEventListener('scroll',handleScroll)
 		}
 	},[])
 	return (
 		<div className="spinner-image" ref={spinnerRef} >
-			<img src={src} alt=""  onClick={onClick}/>
+			<img src={src} alt=""  onClick={onClick} className="image"/>
+			<img src="/static/art/wheel_cloud.png" alt="" className="decor_cloud t" />
+			<img src="/static/art/wheel_cloud.png" alt="" className="decor_cloud b" />
 		</div>
 	)
 }
