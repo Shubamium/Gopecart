@@ -42,10 +42,20 @@ export default function Book({bookData}: Props) {
 		setTimeout(()=>{setDelay(false)},delayTime);
 	};
 
-
+	const scrollProgress = ()=>{
+		const all:React.ReactNode[] = [];
+		const active = <img src="/static/art/chip_red.png" alt="" className="chip" />
+		const hidden = <img src="/static/art/chip_silver.png" alt="" className="chip hidden" />
+			
+		for(let i = 0; i < bookData.book_pages.length; i++){
+			all.push(i < bookIndex ? active : hidden)
+		}
+		return all
+	}
 	return (
 		<>
 		<div className="book">
+		
 			{bookData && bookData.book_pages && bookData.book_pages.map((data,index)=>{
 				// const isNearBack = index < bookIndex+range-1 && index > bookIndex-range-1; 
 		
@@ -164,6 +174,38 @@ export default function Book({bookData}: Props) {
 				</div>
 				<div className="spade-nav right glow-purple" onClick={nextPage}>
 					<img src="/static/art/book_spade-nav.png" alt="" />
+				</div>
+			</div>
+			<div className="decor">
+				<img src="/static/art/book_head.png" alt="" className='decor_heading' />
+				<img src="/static/art/book_diamond.png" alt="" className='decor_diamond' />
+				
+				<div className="scroll-progress-indicator">
+					   {scrollProgress()}
+				</div>
+				<div className="text-decor">
+					<p className='decor_title top'>
+						E<br/>
+						X<br/>
+						H<br/>
+						I<br/>
+						B<br/>
+						I<br/>
+						T<br/>
+						I<br/>
+						O<br/>
+						N
+					</p>
+					<p className='decor_title bottom'>
+						S<br/>
+						T<br/>
+						I<br/>
+						C<br/>
+						K<br/>
+						E<br/>
+						R<br/>
+						S<br/>
+					</p>
 				</div>
 			</div>
 		</div>

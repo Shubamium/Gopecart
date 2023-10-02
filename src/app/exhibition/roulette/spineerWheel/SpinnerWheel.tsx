@@ -50,7 +50,7 @@ export default function SpinnerWheel({imageList}:SpinnerWheelProps){
 				})}
 			</div>
 			<div className="title">
-				<p>EXHIBITION - THUMBNAILS {scrollProgress} </p>
+				<p>EXHIBITION - THUMBNAILS</p>
 			</div>
 			<div className="scroll-progress-indicator">
 				{
