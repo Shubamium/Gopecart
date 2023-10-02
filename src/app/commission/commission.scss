@@ -4,9 +4,9 @@
 	.commission-info-panel{
 		height: 30vw;
 		width: 50vw;
-		left: 10%;
+		left: 15%;
 		position: relative;
-		top: 10vh;
+		top: 2vw;
 		margin: 0 auto;
 		background: linear-gradient(90deg, rgb(35, 19, 47) 0.28%, #424776 143.2%);
 		border: .2vw solid #EEB74D;
@@ -58,6 +58,43 @@
 						object-fit: contain;
 						filter: brightness(50%);
 					}
+				}
+			}
+		}
+
+		.decor{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			pointer-events: none;
+			user-select: none;
+			top: 0%;
+			left: 0%;
+			.decor_cloud{
+				position: absolute;
+				bottom: -8%;
+				right: -4%;
+				scale: -1;
+				width: 9vw;
+			}
+
+			.text-part{
+				height: 100%;
+				left: -2.5%;
+				position: absolute;
+				width: min-content;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1vw;
+
+				font-size: 1vw;
+				hr{
+					height: 100%;
+					width: .1vw;
+					background-color: white;
+					border: none;
+					border-radius: .4vw;
 				}
 			}
 		}

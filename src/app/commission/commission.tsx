@@ -29,17 +29,41 @@ export default function Commission({commissionData}: CommissionProps) {
 				
 			<div className="commission-info-panel">
 
-			<div className="detail">
-				<h2 className='title'>{commissionData[activeCommission].name}</h2>
-				<p className="sub-title">{commissionData[activeCommission].subText}</p>
-				<p className='price '>${commissionData[activeCommission].price}</p>
-			</div>
+				<div className="detail">
+					<h2 className='title'>{commissionData[activeCommission].name}</h2>
+					<p className="sub-title">{commissionData[activeCommission].subText}</p>
+					<p className='price '>${commissionData[activeCommission].price}</p>
+				</div>
 
-			<div className="showcase">
+				<div className="showcase">
 					<h2 className='title'>Samples</h2>
 					<div className="img-part">
 						<img src={commissionData[activeCommission].showcase.big} onClick={()=>showImage(commissionData[activeCommission].showcase.big)} className='img-large' alt="s" />
 						<img src={commissionData[activeCommission].showcase.small} onClick={()=>showImage(commissionData[activeCommission].showcase.small)} className='img-small' alt="s" />
+					</div>
+				</div>
+
+				<div className="decor">
+					<img src="/static/art/wheel_cloud.png" alt="" className="decor_cloud" />
+					<div className="text-part">
+						<p className='decor_title top'>
+							P<br/>
+							A<br/>
+							C<br/>
+							K<br/>
+							A<br/>
+							G<br/>
+							E<br/>
+						</p>
+						<p className='decor_title bottom'>
+							D<br/>
+							E<br/>
+							T<br/>
+							A<br/>
+							I<br/>
+							L<br/>
+						</p>
+						<hr />
 					</div>
 				</div>
 			</div>
