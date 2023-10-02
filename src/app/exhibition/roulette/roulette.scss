@@ -170,4 +170,15 @@
 			top: 85%;
 		}
 	}
+	#container_roulette .scroll-progress-indicator{
+		left: 1%;
+		bottom: 0%;
+		top: initial;
+		transform:translateY(-100%);
+
+		.chip{
+			width: 15px;
+			height: 15px;
+		}
+	}
 }
