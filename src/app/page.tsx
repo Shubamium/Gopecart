@@ -11,7 +11,7 @@ export default function Home() {
 	const contents = [
 		(
 			<article id='section_title-image' key={'section_title-image'}>
-				<h1 style={{visibility:'hidden'}}>GOPECART</h1>
+				<h1 style={{display:'none'}}>GOPECART</h1>
 				<img src="/static/title.png" alt="GOPECART" />
 			</article>
 		),
