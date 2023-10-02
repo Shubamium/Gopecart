@@ -26,3 +26,13 @@
 		}
 	}
 }
+
+@media screen and (max-width:768px) {
+	#container_exhibition-nav{
+
+		width:100%;
+		justify-content: center;
+		gap: 10px;
+		z-index:1000;
+	}
+}
