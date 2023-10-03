@@ -69,7 +69,7 @@ export default function Commission({commissionData}: CommissionProps) {
 			</div>
 
 			<div className="table">
-				<img src="/static/art/decor/commission_table.png" alt=""  className='decor_table'/>
+				<img src="/static/art/decor/commission_table.webp" alt=""  className='decor_table'/>
 			</div>
 
 			<div className="cards">
@@ -79,7 +79,7 @@ export default function Commission({commissionData}: CommissionProps) {
 			</div>
 
 			<div className="character">
-				<img src="/static/art/gopec.png" alt="" className='portrait' />
+				<img src="/static/art/gopec.webp" alt="" className='portrait' />
 				<div className="dialogue-box">
 					<h2 className='name'>Gopec -</h2>
 					<hr />
